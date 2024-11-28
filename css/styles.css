@@ -1,0 +1,441 @@
+/* CSS HEX */
+:root {
+    --nyanza: #d3f8e2ff;
+    --mauve: #e4c1f9ff;
+    --amaranth-pink: #f694c1ff;
+    --vanilla: #ede7b1ff;
+    --uranian-blue: #a9def9ff;
+    --white: rgb(255, 255, 255);
+    --fonte-titulo: "Arvo";
+    --cor-texto: rgb(236, 90, 80);
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--fonte-titulo);
+    color: var(--amaranth-pink);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#queer {
+    color: var(--amaranth-pink);
+    /* Herda a cor do texto ao redor */
+
+}
+
+/* Navbar */
+
+nav {
+    background-color: var(--amaranth-pink);
+}
+.navbar-brand {
+    margin: 0;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+#navbarNav {
+    color: var(--vanilla);
+    font-size: 20px;
+}
+
+.logo {
+    width: 35%;
+}
+
+/* Seção Hero */
+#home {
+    background-image: linear-gradient(to bottom, var(--amaranth-pink), var(--uranian-blue), var(--white));
+    min-height: 70vh;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.container {
+    color: #131313;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+/* Seção Sobre Nós */
+#sobre {
+    padding: 3rem 0;
+}
+
+/* Seção FAQ */
+.faq .accordion-button {
+    color: #333;
+    background-color: #ffcc70;
+    transition: 0.3s;
+}
+
+.faq .accordion-button:hover {
+    color: #fff;
+    background-color: #ff6347;
+}
+
+.btn {
+    background-color: var(--amaranth-pink);
+    color: var(--white);
+}
+/* Rodapé */
+footer {
+    font-size: 0.9rem;
+}
+
+.bolinhas {
+    height: 13px;
+    background-image: url("../imagens/bolinha.png");
+    margin-bottom: 5px;
+}
+
+.social-icons {
+    margin-top: 1rem;
+}
+
+.social-icons img {
+    width: 32px;
+    margin: 0 0.3rem;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+/* Link de navegação ativo */
+.navbar-nav .nav-link {
+    transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffcc70;
+}
+
+/* Mapa */
+.map-section {
+    padding: 2rem;
+}
+
+#map {
+    height: 500px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Carrossel */
+.carousel-section {
+    padding: 2rem;
+    background-color: #ffffff;
+}
+
+.carousel-inner img {
+    border-radius: 8px;
+    max-height: 500px;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
+/* Comentários */
+.comments-section {
+    padding: 2rem;
+    background-color: #ffffff;
+    margin: 2rem 0;
+}
+
+.comments-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.comment {
+    background-color: #f0f0f0;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.comment img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.comment-content h4 {
+    font-size: 1rem;
+    color: #007bff;
+}
+
+.comment-content p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.pronouns {
+    font-size: 14px;
+    color: #777;
+    /* Cor mais sutil para diferenciar */
+    font-weight: normal;
+    margin-left: 5px;
+    /* Espaçamento entre o nome e os pronomes */
+}
+
+
+/* LOGIN */
+
+.container-login {
+    background-image: url("../imagens/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container-nav {
+    height: 50px;
+}
+
+.div-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-login {
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.login-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.login-links a {
+    text-decoration: none;
+    color: var(--white)
+}
+
+.login-links a:hover {
+    color: var(--mauve)
+}
+
+.text-primary {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    border-radius: 20px;
+    width: 30%;
+    background-color: var(--amaranth-pink);
+    color: var(--white);
+}
+
+
+.form {
+    display: none;
+    flex-direction: column;
+    animation: fadeIn 0.3s ease;
+}
+
+.form.active {
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+label {
+    text-align: left;
+    color: var(--white);
+    font-size: 0.9rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+select {
+    width: 100%;
+    padding: 0.6rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="tel"]:focus,
+select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.submit-btn {
+    padding: 0.7rem;
+    background-color: var(--mauve) ;
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    background-color: var(--vanilla);
+}
+
+
+
+
+/* CADASTRO */
+
+.success-message {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #28a745;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--white);
+}
+
+.tab-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 0.6rem;
+    border: none;
+    background-color: #e0e0e0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #555;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 5px 5px 0 0;
+}
+
+/* Responsividade para tablets (768px e menores) */
+@media (max-width: 768px) {
+
+    .container{
+        margin: 15px 0;
+    }
+
+    .title {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    .tab-btn {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+
+    .submit-btn {
+        font-size: 0.9rem;
+        padding: 0.6rem;
+    }
+
+    img { 
+        width: 100%;
+    }
+
+    .logo {
+        width: 55%;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    /* Ajuste no padding da seção "Sobre Nós" */
+    #sobre {
+        padding: 2rem 1rem;
+    }
+
+    /* Navbar centralizada e com margens menores */
+    .navbar-brand {
+        font-size: 1.3rem;
+    }
+
+    .nav-link {
+        font-size: 1.3rem;
+    }
+
+    /* Rodapé */
+    footer {
+        font-size: 0.8rem;
+    }
+}
+
+
+/*-----------------------------------------------------------*/

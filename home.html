@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pride Map</title>
+    <link rel="icon" type="image/png" href="imagens/logo.png">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Doto:wght@100..900&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <div class="logo">
+                <a class="navbar-brand" href="#"><img class="logo" src="imagens/logo.png" alt="logo da Pride Map"></a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a href="#sobre" class="nav-link">Sobre</a></li>
+                    <li class="nav-item"><a href="#juntese" class="nav-link">Junte-se</a></li>
+                    <li class="nav-item"><a href="/cadastro.html" class="nav-link">Cadastre-se</a></li>
+                    <li class="nav-item"><a href="/login.html" class="nav-link">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Seção Principal -->
+    <section id="home" class="d-flex align-items-center text-center" style="height: 70vh;">
+        <div class="container">
+            <h1 class="display-4">Explore a Zona Oeste do Rio</h1>
+            <p class="lead">Descubra locais incríveis recomendados por nossa comunidade.</p>
+            <a href="./mapa.html" class="btn btn-light mt-4 btn-lg">Conheça o Mapa</a>
+        </div>
+    </section>
+
+
+    <section class="container" id="sobre">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1>Sobre Nós</h1>
+                    <p>
+                        Somos um grupo de entusiastas da tecnologia e da inclusão,
+                        alunos da área de Tecnologia da Informação, com o objetivo de
+                        desenvolver um espaço seguro e informativo para a comunidade LGBTQIAPN+
+                        da Zona Oeste do Rio de Janeiro. Nosso projeto,
+                        o <strong>Pride Map</strong>, nasceu da vontade de conectar pessoas
+                        a estabelecimentos que acolhem e apoiam a diversidade.
+                    </p>
+                    <p>
+                        Este projeto foi inspirado no site americano <strong><a href="https://everywhereisqueer.com"
+                                target="_blank" rel="noopener noreferrer" id="queer">Everywhere Is Queer</a></strong>,
+                        que mapeia locais amigáveis para pessoas da comunidade nos Estados Unidos. Nosso desejo é
+                        replicar esse impacto positivo, mostrando que a representatividade e o respeito podem estar
+                        ao alcance de todos.
+                    </p>
+
+                </div>
+                <div class="col-md-auto">
+                    <figure>
+                        <img src="./imagens/lg.png" alt="" height="500px">
+                    </figure>
+                </div>
+            </div>
+            <div class="sqs-block-content">
+                <hr>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Seção Parcerias e Doações -->
+
+
+
+    <section id="juntese" class="section highlight">
+        <div class="container">
+            <h2>Faça Parte Dessa Iniciativa</h2>
+            <p>
+                Você é dono de um estabelecimento gay friendly e quer
+                fazer parte do nosso mapa? Ou deseja apoiar nosso projeto com uma doação?
+                Junte-se a nós e ajude a fortalecer a comunidade LGBTQIA+ na Zona Oeste do Rio!
+            </p>
+            <p>
+                Entre em contato e seja um agente de mudança!
+            </p>
+            <a href="#contato" class="btn btn-light btn-lg">Entre em Contato</a>
+        </div>
+
+        <section class="img">
+            <div class="container">
+                <div class="col-md-auto">
+                    <figure>
+                        <img src="./imagens/mao.png" alt="">
+                    </figure>
+                </div>
+            </div>
+        </section>
+    </section>
+    <div class="bolinhas">
+    </div>
+    <!-- Rodapé -->
+    <footer class="bg-dark text-white text-center py-3">
+
+        <p>&copy; 2024 Pride Map. Todos os direitos reservados.</p>
+        <div class="social-icons">
+            <a href="#" class="social-link"><img src="https://img.icons8.com/ios-filled/50/ffffff/facebook.png"
+                    alt="Facebook"></a>
+            <a href="#" class="social-link"><img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png"
+                    alt="Instagram"></a>
+            <a href="#" class="social-link"><img src="https://img.icons8.com/ios-filled/50/ffffff/twitter.png"
+                    alt="Twitter"></a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./mainjs/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pride Map</title>
+    <link rel="icon" type="image/png" href="imagens/logo.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Doto:wght@100..900&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</head>
+
+<body>
+    <main class="container-login">
+        <form class="login form active">
+            <div class="div-logo"><img class="logo-login" src="imagens/logo.png" alt="logo da Pride Map"></div>
+            <label for="username">Usuário:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password">
+
+            <button type="submit" class="submit-btn"><a href="./home.html">Logar</a></button>
+
+            <div class="login-links">
+                <a href="./cadastro.html">Registre-se agora</a>
+                <a href="Error">Esqueci minha senha</a>
+            </div>
+        </form>
+        
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-dark text-white text-center py-3">
+
+        <p>&copy; 2024 Pride Map. Todos os direitos reservados.</p>
+        <div class="social-icons">
+            <a href="#" class="social-link"><img src="https://img.icons8.com/ios-filled/50/ffffff/facebook.png"
+                    alt="Facebook"></a>
+            <a href="#" class="social-link"><img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png"
+                    alt="Instagram"></a>
+            <a href="#" class="social-link"><img src="https://img.icons8.com/ios-filled/50/ffffff/twitter.png"
+                    alt="Twitter"></a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./mainjs/script.js"></script>
+
+</body>
+
+</html>

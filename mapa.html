@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa de Estabelecimentos - Zona Oeste RJ</title>
+    <link rel="icon" type="image/png" href="imagens/logo.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Doto:wght@100..900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <div class="logo">
+                <a class="navbar-brand" href="home.html"><img class="logo" src="imagens/logo.png"
+                        alt="logo da Pride Map"></a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="./cadastro.html">Cadastre-se</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+
+    <main class="container">
+        <div class="content">
+            <!-- Seção do Mapa -->
+            <section id="map-section" class="map-section">
+                <h2>Encontre Estabelecimentos na Zona Oeste do Rio de Janeiro</h2>
+
+                <div class="sqs-block-content">
+                    <hr>
+                </div>
+
+                <div id="map"></div>
+
+                <div class="sqs-block-content">
+                    <hr>
+                </div>
+            </section>
+
+            <!-- Seção de Comentários -->
+            <section id="comments-section" class="comments-section">
+                <h2>Comentários dos Usuários</h2>
+                <div class="comments-container">
+                    <div class="comment">
+                        <img src="./imagens/user1.png" alt="Foto de Maria L.">
+                        <div class="comment-content">
+                            <h4>@Maria_l <span class="pronouns">(Ela/Dela)</span></h4>
+                            <p>Fui ao Café indicado no Prime Map e adorei o ambiente acolhedor! O staff foi super
+                                respeitoso e a decoração cheia de bandeiras LGBTQIA+ me fez sentir em casa. Mal posso
+                                esperar para voltar!</p>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <img src="./imagens/user2.png" alt="Foto de Rafael S.">
+                        <div class="comment-content">
+                            <h4>@Rafael_silva <span class="pronouns">(Ele/Dele)</span></h4>
+                            <p>Conheci o restaurante Sabor da Diversidade graças ao mapa. A comida é incrível e o
+                                atendimento foi impecável! Finalmente encontrei um lugar onde posso sair com meu
+                                namorado sem me preocupar.</p>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <img src="./imagens/user3.png" alt="Foto de Joana F.">
+                        <div class="comment-content">
+                            <h4>@Joana_f <span class="pronouns">(Ela/Dela)</span></h4>
+                            <p>A loja de roupas é maravilhosa! Não só encontrei peças incríveis, como o dono
+                                compartilhou histórias inspiradoras sobre a importância de apoiar negócios queer.
+                                Recomendo muito!</p>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <img src="./imagens/user4.png" alt="Foto de Bianca R.">
+                        <div class="comment-content">
+                            <h4>@bianca_rosa <span class="pronouns">(Ela/Dela)</span></h4>
+                            <p>Que surpresa boa encontrar um salão de beleza onde me senti confortável para ser eu
+                                mesma! Obrigada ao Pride Map por indicar o Salão Glamour. Me senti respeitada e saí de
+                                lá com o cabelo dos sonhos.</p>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <img src="./imagens/user5.png" alt="Foto de Pedro A.">
+                        <div class="comment-content">
+                            <h4>@Amanda_a <span class="pronouns">(Neutro)</span></h4>
+                            <p>Eu e meu grupo de amigos fomos ao bar inclusivo que vimos no mapa. Foi ótimo curtir um
+                                ambiente seguro, onde todo mundo podia se expressar livremente. Parabéns pela curadoria
+                                do Pride Map!</p>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <img src="./imagens/user6.png" alt="Foto de Lucas S.">
+                        <div class="comment-content">
+                            <h4>@Lucas_S <span class="pronouns">(Ele/Dele)</span></h4>
+                            <p>Visitei a Livraria DiversiBook e fiquei emocionado com a seleção de títulos voltados para
+                                a comunidade LGBTQIA+. Além disso, o espaço é super acolhedor, perfeito para passar
+                                horas lendo. Obrigado ao Pride Map pela indicação!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+        <div class="sqs-block-content">
+            <hr>
+        </div>
+        </section>
+
+        <!-- Carrossel de Recomendações -->
+        <section id="carousel-section" class="carousel-section">
+            <h2>Estabelecimentos Mais Bem Avaliados</h2>
+            <div id="recommendationsCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="./imagens/padaria.png" class="d-block w-100" alt="Estabelecimento 1">
+                        <div class="carousel-caption">
+                            <h5>Padaria Delícias</h5>
+                            <p>Avaliação: 4.8</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./imagens/loja.png" class="d-block w-100" alt="Estabelecimento 2">
+                        <div class="carousel-caption">
+                            <h5>Loja de Roupas</h5>
+                            <p>Avaliação: 4.7</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./imagens/bistro.png" class="d-block w-100" alt="Estabelecimento 3">
+                        <div class="carousel-caption">
+                            <h5>Rastaurante</h5>
+                            <p>Avaliação: 4.9</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#recommendationsCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#recommendationsCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+        </div>
+    </main>
+    <div class="bolinhas">
+    </div>
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Pride Map. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script defer src="./mainjs/script.js"></script>
+</body>
+
+</html>

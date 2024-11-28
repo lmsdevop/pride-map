@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário e Loja</title>
+    <link rel="icon" type="image/png" href="imagens/logo.png">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Doto:wght@100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <main class="container-login">
+        <!-- Formulário de Usuário Padrão -->
+        <form id="userForm" class="login form active">
+            <h2 class="title">Cadastro</h2>
+
+            <label for="username">Nome Completo:</label>
+            <input type="text" id="username" name="username" pattern="[A-Za-zÀ-ÿ\s]+"
+                title="O nome deve conter apenas letras e espaços, sem números ou caracteres especiais." required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"
+                title="Por favor, insira um e-mail válido." placeholder="nome@dominio.com" required>
+
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" pattern=".{6,}"
+                title="A senha deve ter pelo menos 6 caracteres." required>
+
+            <label for="phone">Telefone:</label>
+            <input type="tel" id="phone" name="phone" placeholder="(XX) XXXXX-XXXX" required>
+
+            <p>Já tem login? <a href="./login.html" class="text-primary" id="show-login-link">Faça login aqui.</a></p>
+
+            <button type="submit" class="submit-btn">Cadastrar</button>
+        </form>
+
+        <!-- Mensagem de Sucesso -->
+        <div id="successMessage" class="success-message">
+            Cadastro realizado com sucesso!
+        </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3">
+
+        <p>&copy; 2024 Pride Map. Todos os direitos reservados.</p>
+        <div class="social-icons">
+            <a href="#" class="social-link"><img src="https://img.icons8.com/ios-filled/50/ffffff/facebook.png"
+                    alt="Facebook"></a>
+            <a href="#" class="social-link"><img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png"
+                    alt="Instagram"></a>
+            <a href="#" class="social-link"><img src="https://img.icons8.com/ios-filled/50/ffffff/twitter.png"
+                    alt="Twitter"></a>
+        </div>
+    </footer>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-analytics.js";
+        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
+
+        // Configuração do Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyAGWKJciIwmtMogNLbXKg0PSFnWLSSb7H0",
+            authDomain: "pridemap-ba3e5.firebaseapp.com",
+            projectId: "pridemap-ba3e5",
+            storageBucket: "pridemap-ba3e5.firebasestorage.app",
+            messagingSenderId: "141958362984",
+            appId: "1:141958362984:web:682cbdf877380ea4db88dd",
+            measurementId: "G-HYX3H47ERG"
+        };
+
+        // Inicializa o Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+
+        // Inicializa o Firestore
+        const db = getFirestore(app);
+
+        // Captura o formulário
+        const userForm = document.getElementById("userForm");
+        const successMessage = document.getElementById("successMessage");  // Elemento de mensagem de sucesso
+
+        // Função para salvar os dados no Firestore
+        userForm.addEventListener("submit", async (e) => {
+            e.preventDefault(); // Previne o envio padrão do formulário
+
+            // Coleta os dados do formulário
+            const username = document.getElementById("username").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const phone = document.getElementById("phone").value;
+
+            try {
+                // Adiciona o documento ao Firestore
+                const docRef = await addDoc(collection(db, "users"), {
+                    username: username,
+                    email: email,
+                    password: password,
+                    phone: phone
+                });
+
+                console.log("Documento escrito com ID: ", docRef.id);
+
+                // Exibe a mensagem de sucesso
+                successMessage.style.display = 'block';
+
+                // Limpa os campos do formulário
+                userForm.reset();
+
+                // Oculta a mensagem de sucesso após 3 segundos
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 3000); // Tempo de 3 segundos
+
+            } catch (e) {
+                console.error("Erro ao adicionar documento: ", e);
+                alert("Erro ao realizar cadastro.");
+            }
+        });
+    </script>
+
+</body>
+
+</html>
